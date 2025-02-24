@@ -40,7 +40,21 @@
                                     <input type="number" name="number" class="form-control" value="{{ $book->number }}" required>
                                 </div>
                             </div>
-
+                            
+                            <div class="mb-3 row">
+                                <label for="category_id" class="col-sm-4 col-form-label fw-bold text-end">Danh Mục:</label>
+                                <div class="col-sm-8">
+                                    <select name="category_id" class="form-control" required>
+                                        @foreach($categories as $category)
+                                            <option value="{{ $category->id }}" 
+                                                {{ $book->category_id == $category->id ? 'selected' : '' }}>
+                                                {{ $category->name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            
                             <div class="mb-3 row">
                                 <label for="description" class="col-sm-4 col-form-label fw-bold text-end">Mô Tả:</label>
                                 <div class="col-sm-8">

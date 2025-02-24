@@ -5,15 +5,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Book;
-
+use App\Models\Category;
 class BookController extends Controller
 {
     //
     public function create() {
-        return view('books.create');
+        $categories = Category::all();
+        return view('books.create', compact('categories'));
     }
     public function index(Request $request)
     {
+        $categories = Category::all();
         $query = Book::query();
 
         // Kiểm tra nếu có input từ form và áp dụng bộ lọc
@@ -28,11 +30,14 @@ class BookController extends Controller
         if ($request->filled('published_year')) {
             $query->where('published_year', $request->published_year);
         }
-    
+        if ($request->filled('category_id')) {
+            $query->where('category_id', $request->category_id);
+        }
+        
         // Lấy danh sách sách đã lọc
         $books = $query->get();
     
-        return view('books.index', compact('books'));
+        return view('books.index', compact('books', 'categories'));
     }
     public function store(Request $request)
     {
@@ -41,6 +46,9 @@ class BookController extends Controller
             'author' => 'required',
             'published_year' => 'required|integer',
             'number' => 'required|integer',
+            'category_id' => 'required|exists:categories,id',
+            'description' => 'nullable',
+            
         ]);
 
         Book::create($request->all());
@@ -50,7 +58,8 @@ class BookController extends Controller
     }
     public function edit(Book $book)
     {
-        return view('books.edit', compact('book'));
+        $categories = Category::all();
+        return view('books.edit', compact('book', 'categories'));
     }
     public function update(Request $request, Book $book)
     {
@@ -59,6 +68,7 @@ class BookController extends Controller
             'author' => 'required',
             'published_year' => 'required|integer',
             'number' => 'required|integer',
+            'category_id' => 'required|exists:categories,id',
         ]);
 
         $book->update($request->all());

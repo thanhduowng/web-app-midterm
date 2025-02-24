@@ -11,7 +11,7 @@
                 <div class="border p-4 rounded shadow bg-light">
                     <form action="{{ route('books.store') }}" method="POST">
                         @csrf
-
+                        
                         <div class="mb-3 row">
                             <label for="title" class="col-sm-4 col-form-label fw-bold text-end">Tiêu Đề:</label>
                             <div class="col-sm-8">
@@ -40,13 +40,25 @@
                             </div>
                         </div>
 
+                        <!-- Thêm dropdown chọn danh mục sách -->
+                        <div class="mb-3 row">
+                            <label for="category_id" class="col-sm-4 col-form-label fw-bold text-end">Danh Mục:</label>
+                            <div class="col-sm-8">
+                                <select name="category_id" class="form-control" required>
+                                    <option value="">Chọn danh mục</option>
+                                    @foreach($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+
                         <div class="mb-3 row">
                             <label for="description" class="col-sm-4 col-form-label fw-bold text-end">Mô Tả:</label>
                             <div class="col-sm-8">
                                 <textarea name="description" class="form-control" rows="3"></textarea>
                             </div>
                         </div>
-
 
                         <div class="text-center mt-4">
                             <button type="submit" class="btn btn-primary px-4 me-2">
