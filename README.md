@@ -1,6 +1,5 @@
 # 📚 Book Management System
 
-![Book Management System](https://via.placeholder.com/1000x300?text=Book+Management+System)
 
 ## 📝 Giới thiệu
 Book Management System là một ứng dụng web giúp quản lý sách hiệu quả. Ứng dụng hỗ trợ **thêm, sửa, xóa, lọc sách**, cũng như **thống kê số lượng đầu sách theo danh mục**.
