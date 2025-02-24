@@ -80,8 +80,8 @@ Sau đó truy cập **`http://127.0.0.1:8000`** để sử dụng ứng dụng.
 ### 1️⃣ Đăng nhập
 - Đăng ký tài khoản nếu chưa có.
 - Đăng nhập để bắt đầu sử dụng hệ thống.
-- ![Login]([https://example.com/path/to/image.jpg](https://drive.google.com/file/d/1XsLjWGUtekiPbm519HBKbEIyabfPXd13/view?usp=sharing))
-- ![Register]([https://drive.google.com/file/d/119hQeYV7wnpLTwXTKwa1sVdLQpNQuxb-/view?usp=sharing))
+- ![Login](https://example.com/path/to/image.jpg](https://drive.google.com/file/d/1XsLjWGUtekiPbm519HBKbEIyabfPXd13/view?usp=sharing)
+- ![Register](https://drive.google.com/file/d/119hQeYV7wnpLTwXTKwa1sVdLQpNQuxb-/view?usp=sharing)
 
 ### 2️⃣ Quản lý sách
 - Nhấn **"Thêm sách"** để thêm sách mới.
