@@ -5,6 +5,7 @@
 Book Management System là một ứng dụng web giúp quản lý sách hiệu quả. Ứng dụng hỗ trợ **thêm, sửa, xóa, lọc sách**, cũng như **thống kê số lượng đầu sách theo danh mục**.
 
 ---
+![Sơ Đồ Khối](sodohethong.png)
 
 ## 🚀 Công nghệ sử dụng
 
